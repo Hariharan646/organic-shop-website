@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KBS Organic Shop – Premium Marachekku Oils</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-leaf">🌿</span>
+        <div>
+          <span class="logo-main">KBS</span>
+          <span class="logo-sub">Organic Shop</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Traditional Heritage</p>
+      <h1 class="hero-title">
+        The Purest Extract<br />
+        <span class="highlight">From Nature.</span>
+      </h1>
+      <p class="hero-desc">
+        Crafted using ancient Marachekku techniques. Experience the authentic taste and health benefits of 100% natural, unrefined cold-pressed oils.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Explore Collection</a>
+        <a href="#process" class="btn btn-outline">Discover the Process</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>100%</strong><span>Natural</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>0%</strong><span>Chemicals</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>20+</strong><span>Varieties</span></div>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <div class="hero-img-wrapper">
+        <img src="file:///C:\Users\harit\Downloads\WhatsApp Image 2026-05-19 at 4.17.31 PM (2).jpeg" alt="Premium Cold Pressed Oil" class="hero-photo" />
+        
+        <div class="hero-img-badge">
+          <span class="badge-icon">✨</span>
+          <span>Premium Quality</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span class="marquee-item">✦ 100% Organic</span>
+      <span class="marquee-item">✦ Traditional Wooden Chekku</span>
+      <span class="marquee-item">✦ No Preservatives</span>
+      <span class="marquee-item">✦ Direct from Farms</span>
+      <span class="marquee-item">✦ Cold Pressed</span>
+      <span class="marquee-item">✦ Nutrient Rich</span>
+      <span class="marquee-item">✦ 100% Organic</span>
+      <span class="marquee-item">✦ Traditional Wooden Chekku</span>
+      <span class="marquee-item">✦ No Preservatives</span>
+      <span class="marquee-item">✦ Direct from Farms</span>
+      <span class="marquee-item">✦ Cold Pressed</span>
+      <span class="marquee-item">✦ Nutrient Rich</span>
+    </div>
+  </div>
+
+
+
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Collection</p>
+        <h2 class="section-title">Premium Selections</h2>
+        <p class="section-desc">Meticulously extracted to preserve purity and wellness</p>
+      </div>
+      <div class="filter-tabs">
+        <button class="tab active" onclick="filterProducts('all', this)">All</button>
+        <button class="tab" onclick="filterProducts('oils', this)">Oils</button>
+        <button class="tab" onclick="filterProducts('millets', this)">Millets</button>
+        <button class="tab" onclick="filterProducts('rice', this)">Rice</button>
+        <button class="tab" onclick="filterProducts('soap', this)">Cosmetics</button>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header light">
+        <p class="section-tag">Our Legacy</p>
+        <h2 class="section-title">The Marachekku Method</h2>
+        <p class="section-desc">Ancient wisdom seamlessly blended with modern hygiene standards</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-icon">🌾</div>
+          <h3>Harvest</h3>
+          <p>Sourced directly from trusted organic farms. We select only premium, sun-ripened seeds.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-icon">✨</div>
+          <h3>Purify</h3>
+          <p>Seeds are meticulously cleaned and dried naturally under sunlight before pressing.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-icon">🪵</div>
+          <h3>Extract</h3>
+          <p>The traditional wooden Marachekku extracts oil slowly at low temperatures to retain nutrients.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-icon">🏺</div>
+          <h3>Bottle</h3>
+          <p>Unrefined oil is naturally filtered and hand-poured into premium food-grade bottles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-us" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">The KBS Standard</p>
+        <h2 class="section-title">Uncompromising Quality</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-icon">🌿</div><h3>100% Organic</h3><p>Grown without synthetic pesticides. Pure nature delivered to you.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">🪵</div><h3>Heritage Craft</h3><p>Age-old wooden press techniques respected for generations.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">🧪</div><h3>Unadulterated</h3><p>Absolutely no hexane, preservatives, or bleaching agents.</p></div>
+        <div class="benefit-card"><div class="benefit-icon">❤️</div><h3>Holistic Health</h3><p>Preserves vital antioxidants, vitamins, and essential fatty acids.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Inquiries</p>
+        <h2 class="section-title">Reach Out to Us</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item"><span>📍</span><div><strong>Atelier</strong><p>KBS Organic, Tamil Nadu, India</p></div></div>
+          <div class="contact-item"><span>📞</span><div><strong>Phone</strong><p>+91 XXXXX XXXXX</p></div></div>
+          <div class="contact-item"><span>✉️</span><div><strong>Email</strong><p>contact@kbsorganic.com</p></div></div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="email" name="email" placeholder="Email Address" required />
+          <textarea rows="4" name="message" placeholder="How can we help you?"></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<section class="reviews">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Testimonials</p>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"The groundnut oil quality is exceptional! Our family has switched completely."</p>
+          <div class="reviewer"><div class="reviewer-avatar">HV</div><div><strong>Hariharan V</strong><span>Chennai</span></div></div>
+        </div>
+        <div class="review-card featured-review">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Best sesame oil I have ever tasted. The cold-pressed method truly makes a difference in taste and health benefits!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">SP</div><div><strong>Sriram P</strong><span>Coimbatore</span></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Tried their coconut oil for hair and cooking. Amazing results. Pure and natural!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">AS</div><div><strong>Arjun Surya</strong><span>Madurai</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:1rem;">
+          <span class="logo-leaf">🌿</span>
+          <div>
+            <span class="logo-main" style="color:var(--gold);">KBS</span>
+            <span class="logo-sub" style="color:var(--white);">Organic Shop</span>
+          </div>
+        </div>
+        <p>Curating the finest traditional cold-pressed oils for the modern, mindful kitchen.</p>
+      </div>
+      <div class="footer-links"><h4>Discover</h4><ul>
+        <li><a href="#home">Home</a></li><li><a href="#products">Collection</a></li>
+        <li><a href="#process">Heritage</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Support</h4><ul>
+        <li><a href="#contact">Contact</a></li><li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KBS Organic. All rights reserved. Crafted with excellence.</p>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Basket</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">Total: <strong id="cartTotal">₹0</strong></div>
+      <button class="btn btn-primary" style="width:100%;">Secure Checkout</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>
