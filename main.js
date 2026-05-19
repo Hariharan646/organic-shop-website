@@ -13,21 +13,21 @@ const products = [
   },
   {
     id: 2, category: "oils", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 172546.png",
+    image: "https://happyspicyhour.com/wp-content/uploads/2023/07/does-thai-food-use-sesame-oil.jpg",
     name: "Sesame Oil", price: 420, unit: "500ml",
     desc: "Premium gingelly oil for holistic health. High in calcium and natural minerals.",
     badge: "Signature"
   },
 {
     id: 3, category: "oils", 
-    image: "file:///C:/Users/harit/Downloads/WhatsApp Image 2026-05-19 at 4.17.31 PM.jpeg",
+    image: "https://www.healthbenefitstimes.com/9/gallery/coconut-oil/Coconut-oil-1.jpg",
     name: "Coconut Oil", price: 380, unit: "500ml",
     desc: "Pure wood-pressed coconut oil. Ideal for culinary artistry and skin care.",
     badge: null
   },
   {
     id: 4, category: "oils", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 172839.png",
+    image: "https://healthsea.com/wp-content/uploads/2024/01/castor-oil-what-is-nutritional-value-benefits-uses-and-side-effects-074951.jpg",
     name: "Castor Oil", price: 290, unit: "200ml",
     desc: "Authentic castor oil revered for hair growth and natural moisturizing.",
     badge: null
@@ -41,21 +41,21 @@ const products = [
   },
   {
     id: 6, category: "millets", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 173050.png",
+    image: "https://cdn.shopify.com/s/files/1/1751/6601/products/Barnyard_Millet_DSC5318_800x.jpg?v=1527358961",
     name: "Barnyard Millet", price: 160, unit: "1 kg",
     desc: "A powerhouse of iron and calcium. Suitable for daily dietary needs.",
     badge: null
   },
   {
     id: 7, category: "rice", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 173259.png",
+    image: "https://img.freepik.com/premium-photo/rustic-red-rice-elegance_1115006-3092.jpg",
     name: "Heritage Red Rice", price: 120, unit: "1 kg",
     desc: "Unpolished traditional rice packed with essential fibre and antioxidants.",
     badge: "Heritage"
   },
   {
     id: 8, category: "soap", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 174035.png",
+    image: "https://soapmakingguide.site/wp-content/uploads/2026/01/ethical_palm_oil_soapmaking_rckem-1.jpg.webp",
     name: "Sandle wood Soap", price: 90, unit: "250g",
     desc: "Pure sandalwood soap, 100% premiuim quality",
     badge: null
