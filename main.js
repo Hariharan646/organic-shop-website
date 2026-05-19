@@ -6,7 +6,7 @@
 const products = [
   {
     id: 1, category: "oils", 
-    image: "file:///C:/Users/harit/OneDrive/Pictures/Screenshots/Screenshot 2026-05-19 172239.png",
+    image: "https://5.imimg.com/data5/SELLER/Default/2022/12/ZZ/XL/IG/24056520/groundnut-oil-1000x1000.jpg",
     name: "Groundnut Oil", price: 350, unit: "500ml",
     desc: "Cold-pressed peanut oil rich in Vitamin E. Perfect for traditional cooking.",
     badge: "Best Seller"
