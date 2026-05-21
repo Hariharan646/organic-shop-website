@@ -18,7 +18,7 @@ const products = [
     desc: "Premium gingelly oil for holistic health. High in calcium and natural minerals.",
     badge: "Signature"
   },
-{
+  {
     id: 3, category: "oils", 
     image: "https://www.healthbenefitstimes.com/9/gallery/coconut-oil/Coconut-oil-1.jpg",
     name: "Coconut Oil", price: 380, unit: "500ml",
@@ -56,11 +56,14 @@ const products = [
   {
     id: 8, category: "soap", 
     image: "https://soapmakingguide.site/wp-content/uploads/2026/01/ethical_palm_oil_soapmaking_rckem-1.jpg.webp",
-    name: "Sandle wood Soap", price: 90, unit: "250g",
-    desc: "Pure sandalwood soap, 100% premiuim quality",
+    name: "Sandalwood Soap", price: 90, unit: "250g",
+    desc: "Pure sandalwood soap, 100% premium quality.",
     badge: null
   }
 ];
+
+// ---- FIXED: Global Cart Array Initialization ----
+let cart = []; 
 
 function renderProducts(filter = "all") {
   const grid = document.getElementById("productsGrid");
@@ -89,12 +92,14 @@ function renderProducts(filter = "all") {
 
 function filterProducts(cat, el) {
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  el.classList.add("active");
+  if (el) el.classList.add("active");
   renderProducts(cat);
 }
 
 function addToCart(id, btn) {
   const product = products.find(p => p.id === id);
+  if (!product) return;
+
   const existing = cart.find(c => c.id === id);
   if (existing) {
     existing.qty += 1;
@@ -102,15 +107,18 @@ function addToCart(id, btn) {
     cart.push({ ...product, qty: 1 });
   }
   
-  btn.textContent = "Added";
-  btn.classList.add("added");
-  setTimeout(() => {
-    btn.textContent = "Add";
-    btn.classList.remove("added");
-  }, 1200);
+  if (btn) {
+    btn.textContent = "✓ Added";
+    btn.classList.add("added");
+    
+    setTimeout(() => {
+      btn.textContent = "Add";
+      btn.classList.remove("added");
+    }, 1200);
+  }
 
   updateCartUI();
-  showToast(`🛒 ${product.name} added to basket`);
+  showToast(`🛒 ${product.name} added to basket!`);
 }
 
 function changeQty(id, delta) {
@@ -141,12 +149,16 @@ function renderCartItems() {
   }
 
   const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  
+  // ---- FIXED: Changed item.emoji to an elegant thumbnail image tag ----
   container.innerHTML = cart.map(item => `
     <div class="cart-item">
-      <div class="cart-item-emoji">${item.emoji}</div>
-      <div style="flex:1;">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">₹${item.price} × ${item.qty}</div>
+      <div class="cart-item-img-wrapper" style="width: 50px; height: 50px; flex-shrink: 0; border-radius: 4px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div style="flex:1; margin-left: 12px;">
+        <div class="cart-item-name" style="font-weight:600; font-size:0.95rem;">${item.name}</div>
+        <div class="cart-item-price" style="font-size:0.85rem; color:var(--text-light);">₹${item.price} × ${item.qty}</div>
       </div>
       <div style="display:flex; align-items:center; gap:12px;">
         <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
